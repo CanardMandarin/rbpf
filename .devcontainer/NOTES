@@ -1,0 +1,5 @@
+cd ts/packages/borsh && yarn --frozen-lockfile && yarn build && cd ../../../
+cd ts/packages/anchor && yarn --frozen-lockfile && yarn build:node && yarn link && cd ../../../
+cd ts/packages/spl-associated-token-account && yarn --frozen-lockfile && yarn build:node && yarn link && cd ../../../
+cd ts/packages/spl-token && yarn --frozen-lockfile && yarn build:node && yarn link && cd ../../../
+cd tests && yarn link @coral-xyz/anchor && yarn link @coral-xyz/spl-associated-token-account && yarn link @coral-xyz/spl-token && yarn --frozen-lockfile && cd ..

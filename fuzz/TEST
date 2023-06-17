@@ -1,0 +1,3 @@
+cargo afl build --bin elf-parser-afl
+cargo afl fuzz -i /workspaces/rbpf/tests/afl/ -o /tmp/fuzz-elf-parser target/debug/elf-parser-afl
+cargo afl run target/debug/elf-parser-afl

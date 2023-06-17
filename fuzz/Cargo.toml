@@ -14,6 +14,7 @@ libfuzzer-sys = "0.4"
 num-traits = "0.2"
 rayon = "1.5"
 test_utils = { path = "../test_utils/" }
+afl = "*"
 
 [dependencies.solana_rbpf]
 path = ".."
@@ -25,6 +26,19 @@ members = ["."]
 
 [features]
 only-verified = []
+
+[[bin]]
+name = "elf-parser"
+path = "fuzz_targets/elf_parser.rs"
+test = false
+doc = false
+
+
+[[bin]]
+name = "elf-parser-afl"
+path = "fuzz_targets/elf_parser_afl.rs"
+test = false
+doc = false
 
 [[bin]]
 name = "dumb"
